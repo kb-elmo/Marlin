@@ -40,11 +40,6 @@
 #define FIL_RUNOUT_PIN                        19
 
 //
-// Set the BLtouch as Z-min endstop
-//
-#define Z_MIN_PIN                             2
-
-//
 // Servos
 //
 #if MB(TRIGORILLA_14_11)
