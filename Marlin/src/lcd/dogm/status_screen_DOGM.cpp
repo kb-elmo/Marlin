@@ -903,11 +903,12 @@ void MarlinUI::draw_status_screen() {
   #define EXTRAS_2_BASELINE (EXTRAS_BASELINE + 3)
 
   if (PAGE_CONTAINS(EXTRAS_2_BASELINE - INFO_FONT_ASCENT, EXTRAS_2_BASELINE - 1)) {
+    const progress_t progress = TERN(HAS_PRINT_PROGRESS_PERMYRIAD, get_progress_permyriad, get_progress_percent)();
     set_font(FONT_MENU);
     lcd_put_wchar(3, EXTRAS_2_BASELINE, LCD_STR_FEEDRATE[0]);
 
     set_font(FONT_STATUSMENU);
-    lcd_put_u8str(12, EXTRAS_2_BASELINE, i16tostr3rj(feedrate_percentage));
+    lcd_put_u8str(12, EXTRAS_2_BASELINE, (ui8tostr3rj(progress / (PROGRESS_SCALE))));
     lcd_put_wchar('%');
 
     //
