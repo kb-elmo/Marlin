@@ -848,7 +848,7 @@ void MarlinUI::draw_status_screen() {
 
     set_font(FONT_STATUSMENU);
     lcd_put_u8str(12, EXTRAS_2_BASELINE, (ui8tostr3rj(progress / (PROGRESS_SCALE))));
-    lcd_put_wchar('%');
+    lcd_put_lchar('%');
 
     //
     // Filament sensor display if SD is disabled
