@@ -950,7 +950,7 @@
 
   // Safety: The probe needs time to recognize the command.
   //         Minimum command delay (ms). Enable and increase if needed.
-  //#define BLTOUCH_DELAY 500
+  #define BLTOUCH_DELAY 500
 
   /**
    * Settings for BLTOUCH Classic 1.2, 1.3 or BLTouch Smart 1.0, 2.0, 2.2, 3.0, 3.1, and most clones:
@@ -997,7 +997,7 @@
    *
    * Set the default state here, change with 'M401 S' or UI, use M500 to save, M502 to reset.
    */
-  #define BLTOUCH_HS_MODE true
+  #define BLTOUCH_HS_MODE false
 
 
 #endif // BLTOUCH
@@ -1016,7 +1016,7 @@
    * If not defined, probe limits will be used.
    * Override with 'M422 S<index> X<pos> Y<pos>'.
    */
-  #define Z_STEPPER_ALIGN_XY { {  200, 110 }, { 20,  110 } }
+  #define Z_STEPPER_ALIGN_XY { {  200, 100 }, { 30,  100 } }
 
   /**
    * Orientation for the automatically-calculated probe positions.
@@ -1074,7 +1074,7 @@
 #if ENABLED(ASSISTED_TRAMMING)
 
   // Define from 3 to 9 points to probe.
-  #define TRAMMING_POINT_XY { {  20, 20 }, { 180,  20 }, { 180, 180 }, { 20, 180 } }
+  #define TRAMMING_POINT_XY { {  30, 30 }, { 200,  20 }, { 200, 190 }, { 30, 190 } }
 
   // Define position names for probe points.
   #define TRAMMING_POINT_NAME_1 "Front-Left"
@@ -1083,9 +1083,9 @@
   #define TRAMMING_POINT_NAME_4 "Back-Left"
 
   #define RESTORE_LEVELING_AFTER_G35    // Enable to restore leveling setup after operation
-  //#define REPORT_TRAMMING_MM          // Report Z deviation (mm) for each point relative to the first
+  #define REPORT_TRAMMING_MM          // Report Z deviation (mm) for each point relative to the first
 
-  //#define ASSISTED_TRAMMING_WIZARD    // Add a Tramming Wizard to the LCD menu
+  #define ASSISTED_TRAMMING_WIZARD    // Add a Tramming Wizard to the LCD menu
 
   //#define ASSISTED_TRAMMING_WAIT_POSITION { X_CENTER, Y_CENTER, 30 } // Move the nozzle out of the way for adjustment
 
@@ -1436,7 +1436,7 @@
 
   #if HAS_BED_PROBE
     // Add calibration in the Probe Offsets menu to compensate for X-axis twist.
-    #define X_AXIS_TWIST_COMPENSATION
+    //#define X_AXIS_TWIST_COMPENSATION
     #if ENABLED(X_AXIS_TWIST_COMPENSATION)
       /**
        * Enable to init the Probe Z-Offset when starting the Wizard.
@@ -1446,11 +1446,11 @@
       #define XATC_START_Z 0.0
       #define XATC_MAX_POINTS 3             // Number of points to probe in the wizard
       #define XATC_Y_POSITION Y_CENTER      // (mm) Y position to probe
-      #define XATC_Z_OFFSETS { -0.05, +0.01, +0.05 }    // Z offsets for X axis sample points
+      #define XATC_Z_OFFSETS { 0, 0, 0 }    // Z offsets for X axis sample points
     #endif
 
     // Show Deploy / Stow Probe options in the Motion menu.
-    #define PROBE_DEPLOY_STOW_MENU
+    //#define PROBE_DEPLOY_STOW_MENU
   #endif
 
   // Include a page of printer information in the LCD Main Menu
