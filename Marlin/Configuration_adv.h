@@ -992,7 +992,7 @@
    *
    * Set the default state here, change with 'M401 S' or UI, use M500 to save, M502 to reset.
    */
-  #define BLTOUCH_HS_MODE true
+  #define BLTOUCH_HS_MODE false
 
   // Safety: Enable voltage mode settings in the LCD menu.
   //#define BLTOUCH_LCD_VOLTAGE_MENU
@@ -1013,7 +1013,7 @@
    * If not defined, probe limits will be used.
    * Override with 'M422 S<index> X<pos> Y<pos>'.
    */
-  #define Z_STEPPER_ALIGN_XY { {  200, 110 }, { 20,  110 } }
+  #define Z_STEPPER_ALIGN_XY { {  200, 110 }, { 30, 110 } }
 
   /**
    * Orientation for the automatically-calculated probe positions.
@@ -2107,7 +2107,7 @@
  *
  * Warning: Does not respect endstops!
  */
-#define BABYSTEPPING
+//#define BABYSTEPPING
 #if ENABLED(BABYSTEPPING)
   //#define INTEGRATED_BABYSTEPPING         // EXPERIMENTAL integration of babystepping into the Stepper ISR
   //#define BABYSTEP_WITHOUT_HOMING
